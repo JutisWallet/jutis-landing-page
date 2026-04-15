@@ -74,7 +74,7 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
 <div class="fixed bottom-[-10%] left-[-10%] w-[80vw] max-w-[600px] h-[80vw] max-h-[600px] bg-white/5 rounded-full blur-[140px] pointer-events-none"></div>
 
 <!-- Header -->
-<header class="fixed top-0 left-0 w-full z-50 px-4 md:px-6 py-4">
+<header class="fixed top-0 left-0 w-full z-50 px-6 py-4">
     <nav class="max-w-7xl mx-auto flex items-center justify-between">
         <a href="index.html" class="flex items-center gap-3 group">
             <div class="relative w-10 h-10 flex items-center justify-center">
@@ -84,6 +84,7 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
             </div>
             <span class="text-xl font-display font-bold tracking-[0.2em] uppercase">Jutis</span>
         </a>
+        <!-- Desktop nav -->
         <div class="hidden md:flex items-center gap-8">
             <a href="feature.html" class="text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Feature</a>
             <a href="bridge/index.html" class="text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Bridge</a>
@@ -91,18 +92,34 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
             <a href="docs/index.html" class="text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Docs</a>
             <a href="security.html" class="text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Security</a>
         </div>
-        <div class="hidden md:flex items-center gap-4">
-            <a href="login.html" class="text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Login</a>
+        <div class="flex items-center gap-3">
+            <a href="login.html" class="hidden sm:block text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] transition-colors">Login</a>
             <a href="signup.html" class="px-4 py-2 bg-[#e6e8ec] text-[#1a1d23] rounded-full text-sm font-bold hover:bg-[#dce87a] hover:text-[#1a1d23] transition-all">Sign Up</a>
+            <!-- Hamburger -->
+            <button id="menuBtn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg hover:bg-[#232730] transition-colors" aria-label="Toggle menu">
+                <span class="w-5 h-0.5 bg-[#e6e8ec] transition-all duration-300" id="bar1"></span>
+                <span class="w-5 h-0.5 bg-[#e6e8ec] transition-all duration-300" id="bar2"></span>
+                <span class="w-5 h-0.5 bg-[#e6e8ec] transition-all duration-300" id="bar3"></span>
+            </button>
         </div>
-        <button type="button" class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-full border border-[#2e323c] bg-[#232730]/80 text-[#e6e8ec]">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
     </nav>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden px-6 pb-4 border-t border-[#2e323c]/50 bg-[#1a1d23]/95 backdrop-blur-md">
+        <div class="flex flex-col gap-1 pt-4">
+            <a href="feature.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] transition-all rounded-xl">Feature</a>
+            <a href="bridge/index.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] transition-all rounded-xl">Bridge</a>
+            <a href="developers/index.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] transition-all rounded-xl">Developers</a>
+            <a href="docs/index.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] transition-all rounded-xl">Docs</a>
+            <a href="security.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] transition-all rounded-xl">Security</a>
+            <div class="h-px bg-[#2e323c] my-2"></div>
+            <a href="login.html" class="px-4 py-3 text-sm font-medium text-[#9aa1ac] hover:text-[#e6e8ec] hover:bg-[#232730] rounded-xl transition-all">Login</a>
+            <a href="signup.html" class="px-4 py-3 text-sm font-bold text-[#1a1d23] bg-[#dce87a] rounded-xl transition-all text-center">Sign Up</a>
+        </div>
+    </div>
 </header>
 
-<main class="relative z-10 w-full max-w-4xl px-5 md:px-6 pt-28 md:pt-32 pb-16 md:pb-20 flex flex-col items-center text-center">
-    <div class="mb-10 md:mb-16 floating">
+<main class="relative z-10 w-full max-w-4xl px-6 pt-32 pb-20 flex flex-col items-center text-center">
+    <div class="mb-16 floating">
         <div class="flex items-center justify-center mb-6">
             <div class="relative w-24 h-24 flex items-center justify-center">
                 <div class="absolute inset-0 border-2 border-[#dce87a] rounded-2xl rotate-45 scale-90"></div>
@@ -110,12 +127,12 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
                 <div class="w-2 h-8 bg-[#dce87a] rounded-full"></div>
             </div>
         </div>
-        <h1 class="text-3xl md:text-4xl font-display font-extrabold tracking-[0.25em] uppercase text-[#e6e8ec]">Jutis</h1>
+        <h1 class="text-4xl font-display font-extrabold tracking-[0.25em] uppercase text-[#e6e8ec]">Jutis</h1>
         <div class="w-12 h-0.5 bg-[#dce87a] mx-auto mt-4 rounded-full"></div>
     </div>
 
-    <div class="mb-14 md:mb-20 max-w-xl">
-        <h2 class="text-[2rem] leading-[1.05] md:text-5xl font-display font-medium tracking-tight text-[#e6e8ec]">
+    <div class="mb-20 max-w-xl">
+        <h2 class="text-3xl md:text-5xl font-display font-medium tracking-tight leading-tight text-[#e6e8ec]">
             The essence of security, <br/>
             <span class="text-[#9aa1ac]">architected for Canton.</span>
         </h2>
@@ -123,7 +140,7 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
 
     <div class="group relative">
         <div class="absolute -inset-4 bg-[#dce87a]/10 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition duration-500"></div>
-        <a class="relative inline-flex items-center justify-center gap-3 px-8 md:px-10 py-4 md:py-5 w-full max-w-[290px] bg-[#e6e8ec] text-[#1a1d23] rounded-full font-bold text-base md:text-lg hover:scale-105 active:scale-95 transition-all duration-300" href="dashboard/index.html">
+        <a class="relative inline-flex items-center gap-4 px-10 py-5 bg-[#e6e8ec] text-[#1a1d23] rounded-full font-bold text-lg hover:scale-105 active:scale-95 transition-all duration-300" href="dashboard/index.html">
             Open Jutis
             <span class="material-symbols-outlined font-bold">arrow_outward</span>
         </a>
@@ -142,12 +159,12 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
         or <a href="waitlist.html" class="text-[#dce87a] hover:underline font-medium">join the waitlist</a> for early access
     </p>
 
-    <div class="mt-20 md:mt-32 flex flex-col md:flex-row items-center gap-4 md:gap-8 opacity-40">
+    <div class="mt-32 flex items-center gap-8 opacity-40">
         <div class="flex items-center gap-2">
             <span class="w-1.5 h-1.5 rounded-full bg-[#dce87a]"></span>
             <span class="text-[10px] font-bold tracking-widest uppercase">Verified Node</span>
         </div>
-        <div class="hidden md:block w-8 h-[1px] bg-[#2e323c]"></div>
+        <div class="w-8 h-[1px] bg-[#2e323c]"></div>
         <div class="flex items-center gap-2">
             <span class="text-[10px] font-bold tracking-widest uppercase">Encryption Layer 1</span>
         </div>
@@ -160,5 +177,28 @@ body { background-color: #1a1d23; color: #e6e8ec; font-family: "Inter", system-u
     <div class="w-2 h-2 rounded-full border border-[#dce87a]"></div>
     <div class="w-2 h-2 rounded-full border border-[#dce87a]"></div>
 </div>
+<script>
+// Mobile menu toggle
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const bar1 = document.getElementById('bar1');
+const bar2 = document.getElementById('bar2');
+const bar3 = document.getElementById('bar3');
+if (menuBtn) {
+    menuBtn.addEventListener('click', function() {
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        mobileMenu.classList.toggle('hidden');
+        if (!isOpen) {
+            bar1.style.transform = 'translateY(8px) rotate(45deg)';
+            bar2.style.opacity = '0';
+            bar3.style.transform = 'translateY(-8px) rotate(-45deg)';
+        } else {
+            bar1.style.transform = '';
+            bar2.style.opacity = '';
+            bar3.style.transform = '';
+        }
+    });
+}
+</script>
 </body>
 </html>
